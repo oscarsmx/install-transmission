@@ -1,5 +1,9 @@
 #!/bin/bash
+# Transmission CentOS Installer
+# Updated by OscarS
+# Removed csf = faster seed
 
+{
 # Take input for username and password
 read -p "Transmission username: " uname
 read -p "$uname's Password: " passw
@@ -64,6 +68,7 @@ chkconfig --add transmissiond
 chkconfig --level 345 transmissiond on
 
 # Edit the transmission configuration
+echo "Making adjustments..."
 service transmissiond start
 service transmissiond stop
 sleep 3
@@ -76,4 +81,10 @@ sed -i "s/placeholder123/$uname/" settings.json
 sed -i "s/placeholder321/$passw/" settings.json
 
 # Yay!!!
+echo "Everything fine, starting service"
 service transmissiond start
+echo "Your useranme is $uname and your password is $passw your port is 9091 without SSL"
+echo "Now you can login with transmission remote https://github.com/leonsoft-kras/transmisson-remote-gui/releases"
+echo "The log file is located at: /var/log/transmission_installer.log."
+} 2>&1 | tee /var/log/transmission_installer.log
+#End Script
