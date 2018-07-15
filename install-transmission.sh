@@ -50,9 +50,9 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 
 # Install transmission
 cd /usr/local/src
-wget https://transmission.cachefly.net/transmission-2.92.tar.xz
-tar xvf transmission-2.92.tar.xz
-cd transmission-2.92
+wget https://github.com/transmission/transmission/archive/2.94.tar.gz
+tar xzf transmission-2.94.tar.gz
+cd transmission-2.94
 ./configure --prefix=/usr
 make
 make install
