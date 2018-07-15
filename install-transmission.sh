@@ -50,8 +50,8 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig
 
 # Install transmission
 cd /usr/local/src
-wget https://github.com/transmission/transmission/archive/2.94.tar.gz
-tar xzf 2.94.tar.gz
+wget https://github.com/transmission/transmission-releases/raw/master/transmission-2.94.tar.xz
+tar xvf transmission-2.94.tar.xz
 cd transmission-2.94
 ./configure --prefix=/usr
 make
